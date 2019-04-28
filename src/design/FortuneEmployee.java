@@ -1,5 +1,7 @@
 package design;
 
+import databases.ConnectToSqlDB;
+
 public class FortuneEmployee {
 
 	/**
@@ -14,6 +16,27 @@ public class FortuneEmployee {
 	 *
 	 **/
 	public static void main(String[] args) {
+
+		EmployeeInfo emp1 = new EmployeeInfo(1);
+		EmployeeInfo emp2 = new EmployeeInfo("Adnan",2);
+		EmployeeInfo emp3 = new EmployeeInfo("Opu",3,21);
+
+		System.out.println("-------------------------------------");
+
+		EmployeeInfo.calculateEmployeeBonus(5000,7);
+		EmployeeInfo.calculateEmployeeBonus(5000,10);
+
+
+		System.out.println("----------------------------------------");
+		emp1.setname("Nahid");
+		System.out.println(emp1.getName());
+
+		System.out.println("--------------------------------------");
+
+
+		ConnectToSqlDB connect = new ConnectToSqlDB();
+		connect.insertProfileToSqlTable("Employees","Id","Age");
+
 
 
 

@@ -60,13 +60,15 @@ public class ConnectToSqlDB {
             }
             st.close();
         } catch (Exception e) {
-            System.err.println("Got an exception! ");
+            System.err.println("Got an exception! 63 ");
             System.err.println(e.getMessage());
         }
         return list;
     }
 
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
+
+
         List<User> list = readUserProfileFromSqlTable();
         for (User user : list) {
             System.out.println(user.getStName() + " " + user.getStID() + " " + user.getStDOB());
@@ -81,12 +83,14 @@ public class ConnectToSqlDB {
             statement = connect.createStatement();
             resultSet = statement.executeQuery("select * from " + tableName);
             data = getResultSetData(resultSet, columnName);
+
+            return data;
         } catch (ClassNotFoundException e) {
             throw e;
         } finally {
             close();
         }
-        return data;
+
     }
 
     private void close() {

@@ -11,5 +11,22 @@ public class FindMissingNumber {
          */
         int[] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
 
+        //getting result via static method
+        System.out.println("Mising number is : "+ helper(array));
+
+
+    }
+
+    public static int helper(int aray[]){
+        int n=10;
+        int sum=n*(n+1)/2;
+        int restSum=0;
+        for (int i = 0; i < aray.length; i++) {
+            restSum+=aray[i];
+        }
+        int helper=sum-restSum;
+
+        return helper;
+
     }
 }
